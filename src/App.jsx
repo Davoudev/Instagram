@@ -1,28 +1,17 @@
-import { useState } from "react";
-import "./App.css";
-import { Box, Button, Text } from "@chakra-ui/react";
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import AuthPage from "./components/AuthPage/AuthPage";
+import HomePage from "./components/HomePage/HomePage";
 
-function App() {
-  const [count, setCount] = useState(0);
-
+const App = () => {
   return (
     <>
-      <Box h={"100vh"}>
-        <Box>
-          <Button background={"primary.100"}>
-            <Text
-              fontSize={{
-                base: "small",
-                md: "large",
-              }}
-            >
-              This is for test debugging{" "}
-            </Text>
-          </Button>
-        </Box>
-      </Box>
+      <Routes>
+        <Route element={<HomePage />} path="/" />
+        <Route element={<AuthPage />} path="/auth" />
+      </Routes>
     </>
   );
-}
+};
 
 export default App;
