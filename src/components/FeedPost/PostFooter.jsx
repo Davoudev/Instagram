@@ -27,7 +27,7 @@ const PostFooter = ({ username }) => {
     }
   };
   return (
-    <Box>
+    <Box mb={14}>
       <Flex justifyContent={"flex-start"} my={2} cursor={"pointer"}>
         <Box mr={2} onClick={likeHandler}>
           {!Liked ? <NotificationsLogo /> : <UnlikeLogo />}{" "}
