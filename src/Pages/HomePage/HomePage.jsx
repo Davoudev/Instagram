@@ -1,7 +1,7 @@
 import React from "react";
-import FeedPosts from "../FeedPost/FeedPosts";
+import FeedPosts from "../../components/FeedPost/FeedPosts";
 import { Box, Container, Flex } from "@chakra-ui/react";
-import SuggestedUsers from "../suggestedUsers/SuggestedUsers";
+import SuggestedUsers from "../../components/suggestedUsers/SuggestedUsers";
 
 const HomePage = () => {
   return (
