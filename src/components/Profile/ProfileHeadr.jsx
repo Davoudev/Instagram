@@ -11,7 +11,7 @@ import React from "react";
 
 const ProfileHeadr = () => {
   return (
-    <Flex direction={{ base: "column", sm: "row" }} gap={4}>
+    <Flex direction={{ base: "column", sm: "row" }} gap={4} mt={10}>
       <AvatarGroup
         size={{ base: "xl", md: "2xl" }}
         justifySelf={"center"}

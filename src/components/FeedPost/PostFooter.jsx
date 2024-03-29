@@ -14,7 +14,7 @@ import {
   UnlikeLogo,
 } from "../../assets/constance";
 
-const PostFooter = ({ username }) => {
+const PostFooter = ({ username, isProfilePage }) => {
   const [Likes, setLikes] = useState(1000);
   const [Liked, setLiked] = useState(false);
   const likeHandler = () => {
@@ -27,7 +27,7 @@ const PostFooter = ({ username }) => {
     }
   };
   return (
-    <Box mb={14}>
+    <Box mt={"auto"}>
       <Flex justifyContent={"flex-start"} my={2} cursor={"pointer"}>
         <Box mr={2} onClick={likeHandler}>
           {!Liked ? <NotificationsLogo /> : <UnlikeLogo />}{" "}
@@ -37,15 +37,20 @@ const PostFooter = ({ username }) => {
         </Box>
       </Flex>
       <Box>{Likes} Likes</Box>
-      <Flex>
-        <Text fontWeight={"bold"} mr={1} fontSize={"sm"}>
-          {username}
-        </Text>
-        Feeling good
-      </Flex>
-      <Text fontSize="sm" color={"gray"}>
-        view all 1,000 comments
-      </Text>
+      {!isProfilePage && (
+        <>
+          <Flex>
+            <Text fontWeight={"bold"} mr={1} fontSize={"sm"}>
+              {username}
+            </Text>
+            Feeling good
+          </Flex>
+          <Text fontSize="sm" color={"gray"}>
+            view all 1,000 comments
+          </Text>
+        </>
+      )}
+
       <InputGroup>
         <Input
           variant={"flushed"}
