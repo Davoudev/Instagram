@@ -8,67 +8,19 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import SignUp from "./SignUp";
+import Login from "./Login";
 
 const AuthForm = () => {
-  const navigate = useNavigate();
   const [isLogin, setIsLogin] = useState(true);
-  const [inputes, setInputes] = useState({
-    email: "",
-    password: "",
-    configPassword: "",
-  });
-  const LoginHandler = () => {
-    if (!inputes.email || !inputes.password) {
-      alert("please complete fillds");
-      return;
-    }
-    navigate("/");
-  };
+
   return (
     <>
       {/* big box */}
       <Box border={"1px solid gray"} p={5} borderRadius={4}>
         <VStack spacing={4}>
           <Image src="/logo.png" h={24} />
-
-          <Input
-            placeholder="Email"
-            type="email"
-            fontSize={"14px"}
-            value={inputes.email}
-            onChange={(e) => setInputes({ ...inputes, email: e.target.value })}
-          />
-          <Input
-            placeholder="Password"
-            type="password"
-            fontSize={"14px"}
-            value={inputes.password}
-            onChange={(e) =>
-              setInputes({ ...inputes, password: e.target.value })
-            }
-          />
-          {!isLogin ? (
-            <Input
-              placeholder="Config Password"
-              type="password"
-              fontSize={"14px"}
-              value={inputes.configPassword}
-              onChange={(e) =>
-                setInputes({ ...inputes, configPassword: e.target.value })
-              }
-            />
-          ) : null}
-          <Button
-            colorScheme="blue"
-            w={"full"}
-            size={"sm"}
-            fontSize={14}
-            onClick={LoginHandler}
-          >
-            Log in
-          </Button>
-
+          {isLogin ? <SignUp /> : <Login />}
           {/* -------------------- or ---------------------- */}
 
           <Flex
@@ -82,13 +34,6 @@ const AuthForm = () => {
               OR
             </Text>
             <Box flex={1} h={"1px"} bg={"gray.400"} />
-          </Flex>
-
-          <Flex alignItems={"center"} justifyContent={"center"}>
-            <Image src="/google.png" w={5} alt="Googe Image " />
-            <Text color={"blue.500"} mx={2} cursor={"pointer"}>
-              Log in with Google
-            </Text>
           </Flex>
         </VStack>
       </Box>
