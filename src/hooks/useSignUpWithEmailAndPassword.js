@@ -18,6 +18,15 @@ const useSignUpWithEmailAndPassword = () => {
       showToast("Erorr", "please fill all the fields", "error");
       return;
     }
+
+    const usersRef = collection(firestore, "users");
+    const q = query(usersRef, where("username", "==", inputes.username));
+    const querySnapshot = await getDocs(q);
+
+    if (!querySnapshot.empty) {
+      showToast("Error", "Please fill all the fields", "error");
+      return;
+    }
     try {
       const newUser = await createUserWithEmailAndPassword(
         inputes.email,

@@ -10,6 +10,7 @@ import {
 import React, { useState } from "react";
 import SignUp from "./SignUp";
 import Login from "./Login";
+import GoogleAuth from "./GoogleAuth";
 
 const AuthForm = () => {
   const [isLogin, setIsLogin] = useState(true);
@@ -35,6 +36,7 @@ const AuthForm = () => {
             </Text>
             <Box flex={1} h={"1px"} bg={"gray.400"} />
           </Flex>
+          <GoogleAuth status={!isLogin ? "Log in" : "sign Up"} />
         </VStack>
       </Box>
       <Box
@@ -50,11 +52,11 @@ const AuthForm = () => {
           </Box>
           <Box
             color={"blue.500"}
-            mx={2}
+            ml={1}
             onClick={() => setIsLogin(!isLogin)}
             cursor={"pointer"}
           >
-            {isLogin ? " sign Up" : " Log in "}
+            {isLogin ? "Log in" : "sign Up"}
           </Box>
         </Flex>
       </Box>
