@@ -37,7 +37,7 @@ const Sidebar = () => {
     {
       icon: <Avatar size={"sm"} name="Burak orkmez" src="/profilepic.png" />,
       text: "Profile",
-      link: "/asaproramer",
+      link: "/davidchaharmehali",
     },
   ];
   const { handleLogout, isLoggingOut, error } = useLogout();
