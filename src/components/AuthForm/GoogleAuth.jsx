@@ -26,6 +26,9 @@ const GoogleAuth = ({ status }) => {
         const userDoc = (userDoc = userSnap.data());
         await setDoc(doc(firestore, "users", newUser.user.uid), userDoc);
         loginUser(userDoc);
+        localStorage.setItem("user-info", JSON.stringify(userDoc));
+
+        console.log("geted");
       } else {
         const userDoc = {
           uid: newUser.user.uid,
@@ -42,24 +45,23 @@ const GoogleAuth = ({ status }) => {
         await setDoc(doc(firestore, "users", newUser.user.uid), userDoc);
         loginUser(userDoc);
         localStorage.setItem("user-info", JSON.stringify(userDoc));
+        console.log("seted");
       }
     } catch (error) {
       showToast("Error", error.message, "error");
     }
   };
   return (
-    <>
-      <Flex
-        alignItems={"center"}
-        justifyContent={"center"}
-        onClick={handleGoogleAuth}
-      >
-        <Image src="/google.png" w={5} alt="Googe Image " />
-        <Text color={"blue.500"} mx={2} cursor={"pointer"}>
-          {status} with Google
-        </Text>
-      </Flex>
-    </>
+    <Flex
+      alignItems={"center"}
+      justifyContent={"center"}
+      onClick={handleGoogleAuth}
+    >
+      <Image src="/google.png" w={5} alt="Googe Image " />
+      <Text color={"blue.500"} mx={2} cursor={"pointer"}>
+        {status} with Google
+      </Text>
+    </Flex>
   );
 };
 

@@ -1,8 +1,31 @@
-# React + Vite
+# Project Name
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
 
-Currently, two official plugins are available:
+here we have an instagran clone usage React.js and firebase
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## AuthPage
+
+![Create Account](<./src/screenshots/Screenshot (32).png>)
+
+## HomePage
+
+![Create Account](<./src/screenshots/Screenshot (31).png>)
+
+## HomePage
+
+![Create Account](<./src/screenshots/Screenshot (29).png>)
+
+## Usage
+
+for usage just sign up and enjoy it!
+
+## Contributing
+
+We welcome your contributions! Here are several ways you can contribute to the project:
+
+1. **Reporting Issues**: If you encounter a problem with the project, please create an issue report on GitHub.
+2. **Suggesting New Features**: If you have a suggestion for improving the project, we'd love to hear it! Please create a feature request on GitHub.
+3. **Coding**: If you have coding skills and want to contribute to the project, you can create a Pull Request on GitHub.
+
+For more information on how to contribute, please refer to the Contribution Guidelines.
